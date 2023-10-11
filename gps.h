@@ -12,7 +12,7 @@
 #include <stdio.h> //todo: remove later
 
 
-char *responseMsg(char *commandOfMsg, char *arg);
+char *responseMsg(char *commandOfMsg, char *arg);   //todo: not write
 //        arg
 //          "1": the received message is not supported
 //          "2": valid message, but incorrect execution
@@ -53,7 +53,32 @@ char *lowPowerMode(char *arg1);
 //        the hardware can be woken up by plugging and unplugging the serial port, and the original low-power command can be sent directly.
 
 
+char *setMessageInterval(char *arg1);
+//        arg1
+//            100-10000
+//        example
+//            $PGKC101,1000*02<CR><LF>
+//        The command set is to output NMEA data every 1000ms, which is 1s.
+//        Remarks: When setting the message interval output above 2HZ, first increase the baud rate to above 115200 to ensure high-frequency NMEA message output.
+//        This command is not saved in Flash, and will be restored to the original NMEA output frequency after power failure;
+//        baud rate Modification requires firmware version 3.0 or above to support configuration, and NMEA frequency does not support saving.
 
+
+char *periodicLowPowerMode(char *arg1, char *arg2, char *arg3);
+//        arg1
+//            "0": normal operating mode
+//            "1": period ultra-low power tracking mode
+//            "4": directly enter ultra-low power tracking mode
+//            "8": low power consumption mode, you can wake up by sending commands through the serial port
+//        arg2
+//            Run time (ms), this parameter has effect in periodic mode with Arg1 = 1.
+//        arg3
+//            Sleep time (milliseconds), in periodic mode where Arg1 is 1, this parameter works.
+//        example
+//                $PGKC105,8*3F<CR><LF>
+//                $PGKC105,1,5000,8000*3B<CR><LF>
+//        Note: In low-power mode, the CPU will sleep and can be woken up through the serial port; in ultra-low-power tracking mode,
+//        when the CPU is powered off, it will automatically wake up periodically for positioning output.
 
 
 

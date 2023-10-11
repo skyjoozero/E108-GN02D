@@ -1,0 +1,3 @@
+C:/Users/skyjoozero/Desktop/espModuleLib/E108-GN02D/cmake-build-debug/CMakeFiles/E108_GN02D.dir
+C:/Users/skyjoozero/Desktop/espModuleLib/E108-GN02D/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skyjoozero/Desktop/espModuleLib/E108-GN02D/cmake-build-debug/CMakeFiles/rebuild_cache.dir

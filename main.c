@@ -2,7 +2,7 @@
 #include "gps.h"
 
 int main() {
-    systemReboot("1", "2");
+    systemReboot("4", "2");
     return 0;
 
 //    char * line = "hello, world";
@@ -25,6 +25,16 @@ int main() {
 //
 //    printf("%s", c);
 //    free(c);
+//
+//    return 0;
+
+//    char *a = "aPGKC030,3,1";
+////    uint8_t b = getChecksum(a);
+//
+//    char check[3];
+//    sprintf(check, "%X", getChecksum(a));
+//
+//    printf("%s", check);
 //
 //    return 0;
 }

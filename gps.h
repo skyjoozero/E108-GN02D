@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 
 #include <stdio.h> //todo: remove later
 
@@ -59,6 +60,8 @@ char *lowPowerMode(char *arg1);
 
 
 void appendString(char *str1, char *str2, char **returnStr);
+
+uint8_t getChecksum(char *string);
 
 
 #endif //E108_GN02D_GPS_H

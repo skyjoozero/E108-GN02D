@@ -26,6 +26,14 @@ char *systemReboot(char *arg1, char *arg2) {
     appendString(commandString, ",", &commandString);
 
     appendString(commandString, arg2, &commandString);
+    //for here command string, get checksum
+    char check[3];
+    sprintf(check, "%X", getChecksum(commandString));
+
+    appendString(commandString, "*", &commandString);
+    appendString(commandString, check, &commandString);
+
+    appendString(commandString, footer, &commandString);
 
     printf("%s", commandString);
 
@@ -62,4 +70,19 @@ void appendString(char *str1, char *str2, char **returnStr) {
     memcpy(*returnStr, str1, str1Len);
     memcpy(*returnStr + str1Len, str2, str2Len + 1);
 
+}
+
+
+uint8_t getChecksum(char *string) {
+
+    //string[0] = $, it is not include
+//    string = &string[1];
+
+    uint8_t check = 0;
+
+    for(int i = 1; i < strlen(string); i++) {
+        check ^= (uint8_t) string[i];
+    }
+
+    return check;
 }

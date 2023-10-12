@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include <stdarg.h>
 
 #include <stdio.h> //todo: remove later
 
@@ -83,8 +84,9 @@ char *periodicLowPowerMode(char *arg1, char *arg2, char *arg3);
 
 
 
+char* appendStrings(const char* first, ...);
 
-void appendString(char *str1, char *str2, char **returnStr);
+//void appendString(char *str1, char *str2, char **returnStr);
 
 uint8_t getChecksum(char *string);
 

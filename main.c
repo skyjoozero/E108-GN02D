@@ -7,8 +7,10 @@ int main() {
 //    lowPowerMode("0");
 //    setMessageInterval("1000");
 //    periodicLowPowerMode("8", "", "");
-    periodicLowPowerMode("1", "5000", "8000");
-
+//    periodicLowPowerMode("1", "5000", "8000");
+//    setStarSearchMode("1", "0", "0", "0");
+//    serialPortParameterSetting("3", "3", "9600");
+    setNMEAOutput("115200");
     return 0;
 
 }

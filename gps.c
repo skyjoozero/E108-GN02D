@@ -13,50 +13,34 @@ char *responseMsg(char *commandOfMsg, char *arg) {
 }
 
 char *systemReboot(char *arg1, char *arg2) {
-
     char *command = "030";
     char *commandString = appendStrings(header, command, ",", arg1, ",", arg2, "*", "checksum", footer);
 
     printf(commandString);
-
     free(commandString);
-
 }
 
 char *ereaseAuxiliaryInform() {
-
     char *command = "040";
     char *commandString = appendStrings(header, command, "*", "checksum", footer);
 
-
-
     printf("%s", commandString);
-
     free(commandString);
-
 }
 
 char *lowPowerMode(char *arg1) {
-
     char *command = "051";
     char *commandString = appendStrings(header, command, ",", arg1, "*", "checksum", footer);
 
-
-
     printf("%s", commandString);
-
     free(commandString);
-
 }
 
 char *setMessageInterval(char *arg1) {
     char *command = "101";
     char *commandString = appendStrings(header, command, ",", arg1, "*", "checksum", footer);
 
-
-
     printf("%s", commandString);
-
     free(commandString);
 }
 
@@ -67,11 +51,42 @@ char *periodicLowPowerMode(char *arg1, char *arg2, char *arg3) {
                           appendStrings(header, command, ",", arg1, ",", arg2, ",", arg3,  "*", "checksum", footer);
 
     printf("%s", commandString);
-
     free(commandString);
 
 
 }
+
+
+char *setStarSearchMode(char *arg1, char *arg2, char *arg3, char *arg4) {
+    char *command = "115";
+    char *commandString = appendStrings(header, command, ",", arg1, ",", arg2, ",", arg3, ",", arg4, "*", "checksum", footer);
+
+    printf("%s", commandString);
+    free(commandString);
+}
+
+
+char *serialPortParameterSetting(char *arg1, char *arg2, char *arg3) {
+    char *command = "146";
+    char *commandString = appendStrings(header, command, ",", arg1, ",", arg2, ",", arg3, "*", "checksum", footer);
+
+    printf("%s", commandString);
+    free(commandString);
+}
+
+
+char *setNMEAOutput(char *arg1) {
+    char *command = "147";
+    char *commandString = appendStrings(header, command, ",", arg1, "*", "checksum", footer);
+
+    printf("%s", commandString);
+    free(commandString);
+}
+
+
+
+
+
 
 
 

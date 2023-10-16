@@ -156,6 +156,59 @@ char *setNMEAOutput(char *arg1);
 //            $PGKC147,115200*06<CR><LF>
 
 
+char *gpdDocDelete(void);
+//        args
+//            NONE
+//
+//        example
+//            $PGKC047*2C<CR><LF>
+
+
+char *setNMEASerialPortParameter(char *arg1, char *arg2);
+//        arg1
+//            "0": NMEA data
+//            "1": Binary data
+//        arg2
+//            9600，19200，38400，57600，115200, .. ,921600，
+//
+//        example
+//            $PGKC149，0，38400*2C<CR><LF>
+//            $PGKC149，1，115200*15<CR><LF>
+
+//        Remarks: This command is usually used in AGPS to load GPD files into Flash;
+//                 the baud rate modification requires firmware version 3.0 or above to support configuration;
+
+
+char *ppsConfiguration(char *arg1, char *arg2, char *arg3);
+//        arg1
+//            "0": turn off PPS output
+//            "1": first time fix
+//            "2": 3D fix
+//            "3": 2D/3D fix
+//            "4": always on
+//        arg2
+//            PPS pulse width(ms)
+//        arg3
+//            PPS pulse period(ms)
+//
+//        example
+//            $PGKC161，2，500，2000*0<CR><LF>
+//
+//        Note
+//            The maximum pulse width of PPS is 998ms, the minimum is 1ms, and the minimum range of pulse period is 1000ms
+
+
+char *queryMessageInterval(void);
+//        args
+//            NONE
+//
+//        example
+//            $PGKC201*2C<CR><LF>
+
+
+char *returnMessageIneterval();
+//todo
+
 char* appendStrings(const char* first, ...);
 
 //void appendString(char *str1, char *str2, char **returnStr);

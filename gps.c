@@ -84,10 +84,40 @@ char *setNMEAOutput(char *arg1) {
 }
 
 
+char *gpdDocDelete(void) {
+    char *command = "047";
+    char *commandString = appendStrings(header, command, "*", "checksum", footer);
+
+    printf("%s", commandString);
+    free(commandString);
+}
 
 
+char *setNMEASerialPortParameter(char *arg1, char *arg2) {
+    char *command = "149";
+    char *commandString = appendStrings(header, command, ",", arg1, ",", arg2, "*", "checksum", footer);
+
+    printf("%s", commandString);
+    free(commandString);
+}
 
 
+char *ppsConfiguration(char *arg1, char *arg2, char *arg3) {
+    char *command = "161";
+    char *commandString = appendStrings(header, command, ",", arg1, ",", arg2, ",", arg3, "*", "checksum", footer);
+
+    printf("%s", commandString);
+    free(commandString);
+}
+
+
+char *queryMessageInterval(void) {
+    char *command = "201";
+    char *commandString = appendStrings(header, command, "*", "checksum", footer);
+
+    printf("%s", commandString);
+    free(commandString);
+}
 
 
 char* appendStrings(const char* first, ...) {
